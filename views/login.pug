@@ -1,0 +1,18 @@
+html(lan="en")
+head
+    meta(charset = "utf-8")
+    title Login Page
+    script(src="/orderform.js")
+        include ../public/orderform.js
+style 
+    include ../public/style.css
+body 
+    h1 Login Page
+    div#login(class='login')
+        label(for="log_name") Name:
+        input#log_name(type='text', name='log_name')
+        br
+        label(for="log_pas") Password :
+        input#log_pas(type='text', name='log_pas')
+        br
+        button#login_button(type="button" onclick="login()") Login

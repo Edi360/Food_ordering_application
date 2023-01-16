@@ -1,0 +1,24 @@
+html(lan="en")
+head
+    meta(charset = "utf-8")
+    title Registration Page
+    script(src="/orderform.js")
+        include ../public/orderform.js
+style 
+    include ../public/style.css
+body 
+    h1 Registration page
+    div#register(class='register')
+        label(for="reg_name") Name:
+        input#reg_name(type='text', name='reg_name')
+        br
+        label(for="reg_pas") Password :
+        input#reg_pas(type='text', name='reg_pas')
+        br 
+        div#pri_select(class="pri_select")
+            label(for="select_div") Privacy:
+            select#select_div
+                option(id="true" value=true) Private
+                option(id="false" value=false) Public
+        br
+        button#register_button(type="button" onclick="register()") Register

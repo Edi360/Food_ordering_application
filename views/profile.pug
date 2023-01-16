@@ -1,0 +1,29 @@
+html(lan="en")
+    head
+        meta(charset = "utf-8")
+        script(src="/orderform.js")
+            include  ../public/orderform.js
+        title Profile page 
+        if loggedin
+            include ./partials/header_in
+        else 
+            include ./partials/header_out
+    style 
+        include ../public/style.css
+    body
+        if loggedin
+                button#logout_button(type="button" onclick="logout()") Logout
+        h1 Profile Page 
+        h3 User name: #{user.username}
+        if user_loggedin
+            div#pro_select(class="pri_select")
+                label(for="select_div") Privacy:
+                select#select_div_pro
+                    option(id="true" value=true) Private
+                    option(id="false" value=false) Public
+            button#pro_button(type="button" onclick="toggle_privacy()") save change
+        br
+        h3 Order History 
+        each order in user.order_history 
+            a(href="/orders/"+order.id) #{order.id}
+            br

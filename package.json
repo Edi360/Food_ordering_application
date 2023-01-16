@@ -1,0 +1,26 @@
+{
+  "name": "q",
+  "version": "1.0.0",
+  "description": "name: Edi Ekeng How to run:     1. Naviagate to the directory in the terminal which the files are located \"A4\".     2. Use these commands in the terminal in order;         a. npm init         b. npm i express          c. npm i pug         d. npm i mongo         e. npm i mongoose         f. npm i path         g. npm i faker         h. mkdir database (makes the database)         i. mongod --dbpath=database (starts the database)     3. run node database-initializer.js     4. run node server.js     5. copy the link displayed in the terminal and paste it in your browser of choice. Files included:     1. README.txt     2. database-initializer.js     3. server.js     4. Public         a. add.pug         b. remove.pug         c. style.css         d. orderform.js         e. orderform.html     5. views         a. home.pug         b. login.pug         c. registration.pug         d. user.pug         e. profile.pug         f. order_summery.pug         g. partials             i. header_in.pug             ii. header_out.pug",
+  "main": "database-initializer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-mongodb-session": "^3.1.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "faker": "^6.6.6",
+    "fs": "0.0.1-security",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.2.1",
+    "mongoose": "^6.7.5",
+    "numeral": "^2.0.6",
+    "path": "^0.12.7",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {}
+}

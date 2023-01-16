@@ -1,0 +1,34 @@
+html(lan="en")
+    head
+        meta(charset = "utf-8")
+        script(src="/orderform.js")
+            include  ../public/orderform.js
+        title Profile page 
+        if loggedin
+            include ./partials/header_in
+        else 
+            include ./partials/header_out
+    style 
+        include ../public/style.css
+    body
+        if loggedin
+            button#logout_button(type="button" onclick="logout()") Logout
+        h1 Order Summary
+        br
+        a Order id: #{order.id}
+        br
+        a User: #{username}
+        br
+        a Delivery fee: #{order.fee}
+        br
+        a Subtotal: #{order.subtotal}
+        br
+        a Tax: #{order.tax.toFixed(2)}
+        //- a Tax: #{formatNumber(order.tax)}
+        br 
+        a Total: #{order.total.toFixed(2)}
+        br
+        h3 Items:
+        each value,index in order.order 
+            a x#{value.quantity} #{value.name}
+            br

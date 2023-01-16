@@ -1,0 +1,19 @@
+html(lan="en")
+    head
+        meta(charset = "utf-8")
+        script(src="orderform.js")
+            include  ../public/orderform.js
+        title Users Page
+        if loggedin
+            include ./partials/header_in
+        else 
+            include ./partials/header_out
+    style 
+        include ../public/style.css
+    body
+        if loggedin
+            button#logout_button(type="button" onclick="logout()") Logout
+        h1 Public Users
+        each user in users 
+            a(href="./users/"+user._id) #{user.username}
+            br
